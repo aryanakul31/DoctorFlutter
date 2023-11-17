@@ -1,4 +1,3 @@
-import '../../../resources/colors.dart';
 import 'package:doctors/ui/button_filled.dart';
 import 'package:doctors/ui/custom_text_field.dart';
 import 'package:doctors/ui/social_login_widget.dart';
@@ -9,8 +8,10 @@ import 'package:doctors/utils/validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../resources/colors.dart';
 import '../../models/request/SignUpRequestModel.dart';
 import '../../networking/network_call.dart';
+import '../../resources/custom_theme.dart';
 import '../../ui/ui_utils.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -33,8 +34,8 @@ class _SignUpPageState extends State<SignUpPage> {
     var error = "";
     if (name.trim().isEmpty) {
       error = "Empty name";
-    }  else if (Validations.validEmail(email.trim()) != null) {
-      error = Validations.validEmail(email.trim())??"";
+    } else if (Validations.validEmail(email.trim()) != null) {
+      error = Validations.validEmail(email.trim()) ?? "";
     } else if (password.trim().isEmpty) {
       error = "Empty password";
     }
@@ -102,6 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     TextTitle(
                       text: "1/3",
+                      fontFamily: FontType.Text,
                       color: Colors.black,
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
@@ -113,6 +115,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 margin: const EdgeInsets.only(left: marginSide),
                 child: const TextTitle(
                   text: "Get Started",
+                  fontFamily: FontType.Text,
                   fontSize: 34,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -125,6 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: const TextTitle(
                   text:
                       "Create an account so you can talk to experts from various medical fields.",
+                  fontFamily: FontType.Text,
                   fontSize: 15,
                   fontWeight: FontWeight.normal,
                   color: CustomColors.color717171,
@@ -216,8 +220,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.symmetric(horizontal: marginSide),
                     child: const TextTitle(
                       text: "Or",
+                      fontFamily: FontType.Text,
                       fontWeight: FontWeight.w600,
-                      fontSize: 14,
+                      color: CustomColors.color222222,
+                      fontSize: 17,
                     ),
                   ),
                 ],

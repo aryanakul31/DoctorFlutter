@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../resources/colors.dart';
+import '../../../resources/custom_theme.dart';
 import '../../../ui/text_title.dart';
 import '../../../utils/constants.dart';
 
@@ -38,19 +39,23 @@ class PostWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextTitle(
+                          fontFamily: FontType.Text,
                           text: "Fred Richard",
                           fontSize: 15,
+                          color: CustomColors.color222222,
                           fontWeight: FontWeight.w600,
                         ),
                         TextTitle(
                           text: "Head of cardiac surgery",
                           color: CustomColors.color999999,
                           fontSize: 13,
+                          fontFamily: FontType.Text,
                           fontWeight: FontWeight.normal,
                         ),
                         TextTitle(
                           text: "2 days ago",
                           fontSize: 13,
+                          fontFamily: FontType.Text,
                           color: CustomColors.color999999,
                           fontWeight: FontWeight.normal,
                         ),
@@ -61,22 +66,32 @@ class PostWidget extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: marginSideHalf,
+          ),
           Container(
-              margin: const EdgeInsets.symmetric(
-                  vertical: marginSideHalf, horizontal: marginSide),
+              margin: const EdgeInsets.symmetric(horizontal: marginSide),
               child: const TextTitle(
                 text:
-                    "Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habitant egestas magna.",
+                    "Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habitant \negestas magna.",
+                fontFamily: FontType.Text,
                 fontSize: 15,
+                color: CustomColors.color222222,
                 fontWeight: FontWeight.normal,
               )),
+          SizedBox(
+            height: marginSide,
+          ),
           if (showImage)
             Image.asset(
               "assets/images/temp_mentor_1.jpeg",
               fit: BoxFit.cover,
               width: double.infinity,
-              height: 200,
+              height: 270,
             ),
+          SizedBox(
+            height: marginSideHalf,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,13 +100,15 @@ class PostWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(
                     left: marginSide, top: marginSideHalf, bottom: marginSide),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     SvgPicture.asset("assets/images/icon_like_prefix.svg"),
                     const TextTitle(
                       text: " 43 Personen gefällt das",
+                      fontFamily: FontType.Text,
                       color: CustomColors.color848484,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 13,
                     ),
                   ],
                 ),
@@ -105,10 +122,11 @@ class PostWidget extends StatelessWidget {
                 child: const Row(
                   children: [
                     TextTitle(
+                      fontFamily: FontType.Text,
                       text: " 3 Comments",
                       color: CustomColors.color848484,
                       fontWeight: FontWeight.normal,
-                      fontSize: 15,
+                      fontSize: 13,
                     ),
                   ],
                 ),
@@ -126,6 +144,7 @@ class PostWidget extends StatelessWidget {
                   children: [
                     SvgPicture.asset("assets/images/icon_like.svg"),
                     const TextTitle(
+                      fontFamily: FontType.Text,
                       text: " Like",
                       color: CustomColors.color848484,
                       fontWeight: FontWeight.normal,
@@ -141,6 +160,7 @@ class PostWidget extends StatelessWidget {
                   children: [
                     SvgPicture.asset("assets/images/icon_comment.svg"),
                     const TextTitle(
+                      fontFamily: FontType.Text,
                       text: " Comment",
                       color: CustomColors.color848484,
                       fontWeight: FontWeight.normal,

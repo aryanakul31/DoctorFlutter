@@ -24,4 +24,6 @@ class CustomColors {
   static const colorF0F0F0 = Color(0XFFF0F0F0);
 
   static const color848484 = Color(0XFF848484);
+
+  static const colorEFEFEF = Color(0XFFEFEFEF);
 }

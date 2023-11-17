@@ -1,3 +1,4 @@
+import 'package:doctors/resources/custom_theme.dart';
 import 'package:doctors/ui/text_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,9 @@ import '../utils/constants.dart';
 
 class ButtonGrey extends StatelessWidget {
   final String text;
+  final double fontSize;
   final Color textColor;
+  final FontType fontFamily;
   final String? imageAssetPre;
   final String? imageAssetPost;
   final VoidCallback onPressed;
@@ -18,7 +21,9 @@ class ButtonGrey extends StatelessWidget {
     required this.onPressed,
     required this.text,
     this.textColor = Colors.white,
+    this.fontSize = 17,
     this.imageAssetPre,
+    this.fontFamily = FontType.Text,
     this.imageAssetPost,
     this.margin = const EdgeInsets.symmetric(
       horizontal: marginSide,
@@ -39,6 +44,15 @@ class ButtonGrey extends StatelessWidget {
               borderRadius: BorderRadius.circular(8.0),
             ),
           ),
+          elevation: MaterialStateProperty.resolveWith<double>(
+            // As you said you dont need elevation. I'm returning 0 in both case
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.disabled)) {
+                return 0;
+              }
+              return 0; // Defer to the widget's default.
+            },
+          ),
           backgroundColor:
               const MaterialStatePropertyAll<Color>(CustomColors.colorEDEDED),
         ),
@@ -53,7 +67,8 @@ class ButtonGrey extends StatelessWidget {
                 text: text,
                 color: textColor,
                 fontWeight: FontWeight.w500,
-                fontSize: 17,
+                fontFamily: fontFamily,
+                fontSize: fontSize,
               ),
             ),
             if (imageAssetPost != null) SvgPicture.asset(imageAssetPost!),

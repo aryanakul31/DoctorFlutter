@@ -1,8 +1,8 @@
 import 'package:doctors/models/response/SubjectResponseModel.dart';
-import '../../../resources/colors.dart';
 import 'package:doctors/ui/text_title.dart';
 import 'package:flutter/material.dart';
 
+import '../../../resources/custom_theme.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/hex_color.dart';
 
@@ -17,11 +17,15 @@ class SubjectWidget extends StatelessWidget {
       // Navigator.pushNamed(context, MyRoutes.profileRoute.path);
     }
 
-    return GestureDetector(
+    return InkWell(
       onTap: moveToProfile,
       child: Container(
         margin: const EdgeInsets.only(
-            left: marginSide, top: marginSideHalf, bottom: marginSideHalf),
+          left: marginSide / 2-4,
+          right: marginSide / 2-4,
+          top: marginSideHalf,
+          bottom: marginSideHalf,
+        ),
         child: Card(
           elevation: 2,
           shape: RoundedRectangleBorder(
@@ -32,8 +36,8 @@ class SubjectWidget extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  width: 150,
-                  height: 105,
+                  width: 170,
+                  height: 130,
                   child: Image.asset(
                     subject.image,
                     fit: BoxFit.cover,
@@ -41,14 +45,15 @@ class SubjectWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    width: 150,
+                    width: 170,
                     color: HexColor.fromHex(subject.color),
                     child: Padding(
                       padding: const EdgeInsets.all(marginSideHalf),
                       child: TextTitle(
                         text: subject.name,
+                        fontFamily: FontType.Text,
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 17,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

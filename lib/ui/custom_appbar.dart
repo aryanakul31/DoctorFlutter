@@ -1,3 +1,4 @@
+import 'package:doctors/resources/custom_theme.dart';
 import 'package:doctors/ui/text_title.dart';
 import 'package:doctors/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           TextTitle(
             text: title,
+            fontFamily: FontType.Text,
             fontWeight: FontWeight.w600,
-            fontSize: 16,
+            fontSize: 15,
           ),
           Container(
             padding: const EdgeInsets.only(left: marginSide, right: marginSide),

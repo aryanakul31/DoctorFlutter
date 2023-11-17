@@ -1,3 +1,5 @@
+import 'package:doctors/resources/custom_theme.dart';
+
 import '../../../resources/colors.dart';
 import 'package:doctors/ui/text_title.dart';
 import 'package:doctors/utils/constants.dart';
@@ -28,6 +30,7 @@ class SocialLoginWidget extends StatelessWidget {
               minLeadingWidth: 10,
               title: TextTitle(
                 text: text,
+                fontFamily: FontType.Text,
                 fontSize: 17,
                 color: CustomColors.color222222,
                 fontWeight: FontWeight.normal,

@@ -1,3 +1,4 @@
+import 'package:doctors/resources/custom_theme.dart';
 import 'package:doctors/ui/text_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +9,9 @@ import '../utils/constants.dart';
 class ButtonOutlined extends StatelessWidget {
   final String text;
   final bool isValid;
+  final bool extraPadding;
   final double fontSize;
+  final FontType fontFamily;
   final Color textColor;
   final FontWeight fontWeight;
   final TextAlign textAlign;
@@ -22,6 +25,7 @@ class ButtonOutlined extends StatelessWidget {
     required this.onPressed,
     required this.text,
     this.fontSize = 17,
+    this.fontFamily = FontType.Text,
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.center,
     this.textColor = CustomColors.color222222,
@@ -32,6 +36,7 @@ class ButtonOutlined extends StatelessWidget {
       vertical: marginSide,
     ),
     this.isValid = true,
+    this.extraPadding = false,
   });
 
   @override
@@ -41,6 +46,14 @@ class ButtonOutlined extends StatelessWidget {
         return CustomColors.color222222;
       } else {
         return Colors.grey;
+      }
+    }
+
+    double getPadding() {
+      if (extraPadding) {
+        return 15.0;
+      } else {
+        return 10.0;
       }
     }
 
@@ -58,9 +71,10 @@ class ButtonOutlined extends StatelessWidget {
           children: [
             if (imageAssetPre != null) SvgPicture.asset(imageAssetPre!),
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(getPadding()),
               child: TextTitle(
                 text: text,
+                fontFamily: fontFamily,
                 color: textColor,
                 textAlign: textAlign,
                 fontWeight: fontWeight,

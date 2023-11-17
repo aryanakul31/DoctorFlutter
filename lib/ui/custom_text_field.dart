@@ -1,3 +1,4 @@
+import 'package:doctors/resources/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/colors.dart';
@@ -48,9 +49,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
           onChanged: widget.onChanged,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
-          style: const TextStyle(
+          style: TextStyle(
             color: CustomColors.color717177,
             fontWeight: FontWeight.normal,
+            fontFamily: FontType.Text.value,
             fontSize: 16,
           ),
           decoration: InputDecoration(
@@ -59,8 +61,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
             border: InputBorder.none,
             labelText: widget.label,
             hintText: widget.hint,
-            labelStyle: const TextStyle(
+            labelStyle: TextStyle(
               color: CustomColors.color717177,
+              fontFamily: FontType.Text.value,
               fontWeight: FontWeight.normal,
               fontSize: 12,
             ),

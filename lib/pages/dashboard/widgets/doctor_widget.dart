@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../resources/colors.dart';
+import '../../../resources/custom_theme.dart';
 import '../../../ui/text_title.dart';
 import '../../../utils/constants.dart';
 
@@ -24,13 +25,22 @@ class _DoctorWidgetState extends State<DoctorWidget> {
       onTap: navigateToProfile,
       child: Card(
         margin: const EdgeInsets.only(
-            left: marginSide, top: marginSideHalf, bottom: marginSideHalf),
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(marginSideHalf),
+          top: marginSideHalf,
+          bottom: marginSideHalf,
+          left: marginSide / 2 - 4,
+          right: marginSide / 2 - 4,
         ),
+        elevation: 5,
+        shadowColor: Colors.black.withOpacity(0.1),
+        shape: RoundedRectangleBorder(
+            side: BorderSide(
+              color: CustomColors.colorEFEFEF.withOpacity(0.5),
+              width: 2,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.circular(cornerRadius16)),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(marginSideHalf),
+          borderRadius: BorderRadius.circular(cornerRadius16),
           child: Container(
             margin: EdgeInsets.symmetric(vertical: marginSideHalf),
             alignment: AlignmentDirectional.center,
@@ -38,13 +48,14 @@ class _DoctorWidgetState extends State<DoctorWidget> {
               children: [
                 Container(
                   alignment: Alignment.center,
+                  margin: EdgeInsets.only(top: marginSide, bottom: marginSide),
                   child: Stack(
                     alignment: AlignmentDirectional.bottomEnd,
                     children: [
                       Image.asset(
                         "assets/images/temp_doc_clearer.png",
-                        height: 130,
-                        width: 130,
+                        height: 110,
+                        width: 110,
                         fit: BoxFit.fill,
                       ),
                       Container(
@@ -62,10 +73,11 @@ class _DoctorWidgetState extends State<DoctorWidget> {
                 ),
                 Container(
                   margin: const EdgeInsets.only(
-                      left: marginSide, right: marginSide, top: marginSideHalf),
+                      left: marginSide, right: marginSide, top: 0),
                   child: const TextTitle(
                     text: "Dr. Lea Leicht",
-                    fontSize: 20,
+                    fontFamily: FontType.Text,
+                    fontSize: 17,
                     color: CustomColors.color222222,
                     fontWeight: FontWeight.w600,
                   ),
@@ -73,11 +85,14 @@ class _DoctorWidgetState extends State<DoctorWidget> {
                 Container(
                   padding: const EdgeInsets.only(
                     left: marginSide,
+                    top: 5,
+                    bottom: 5,
                     right: marginSide,
                   ),
                   child: const TextTitle(
                     text: "Head of cardiac surgery",
-                    fontSize: 16,
+                    fontFamily: FontType.Text,
+                    fontSize: 15,
                     color: CustomColors.color717177,
                     fontWeight: FontWeight.normal,
                   ),
@@ -95,6 +110,7 @@ class _DoctorWidgetState extends State<DoctorWidget> {
                       alignment: AlignmentDirectional.center,
                       child: const TextTitle(
                         text: "4.8",
+                        fontFamily: FontType.Text,
                         fontSize: 15,
                         color: CustomColors.color717177,
                         fontWeight: FontWeight.normal,

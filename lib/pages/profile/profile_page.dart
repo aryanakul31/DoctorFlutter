@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../resources/colors.dart';
+import '../../resources/custom_theme.dart';
 import '../../ui/text_title.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -43,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage>
       backgroundColor: CustomColors.backgroundColor,
       bottomNavigationBar: Container(
         color: Colors.white,
-        height: 81,
+        height: 90,
         child: Column(children: [
           Container(
             height: 1,
@@ -51,7 +52,9 @@ class _ProfilePageState extends State<ProfilePage>
             color: CustomColors.colorDDDDDD,
           ),
           ButtonFilled(
+            extraPadding: true,
             onPressed: () {},
+            fontWeight: FontWeight.w600,
             text: "Book Class",
           ),
         ]),
@@ -66,8 +69,8 @@ class _ProfilePageState extends State<ProfilePage>
               return [
                 SliverAppBar(
                   backgroundColor: Colors.transparent,
-                  expandedHeight: 490,
-                  collapsedHeight: 490,
+                  expandedHeight: 480,
+                  collapsedHeight: 480,
                   automaticallyImplyLeading: false,
                   flexibleSpace: Column(
                     children: [
@@ -76,7 +79,9 @@ class _ProfilePageState extends State<ProfilePage>
                         child: Column(
                           children: [
                             const CustomAppBar(title: "Henry Hildebrandt"),
-                            spaceInBetween,
+                            SizedBox(
+                              height: 20,
+                            ),
                             Container(
                               alignment: Alignment.center,
                               child: Stack(
@@ -103,11 +108,15 @@ class _ProfilePageState extends State<ProfilePage>
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: marginSide,
-                                  vertical: marginSideHalf),
+                              margin: const EdgeInsets.only(
+                                left: marginSide,
+                                right: marginSide,
+                                top: marginSideHalf/2,
+                                bottom: marginSideHalf,
+                              ),
                               child: const TextTitle(
                                 text: "MUDr. Amandeep Grewal",
+                                fontFamily: FontType.Display,
                                 fontSize: 22,
                                 color: CustomColors.color393333,
                                 fontWeight: FontWeight.bold,
@@ -115,13 +124,14 @@ class _ProfilePageState extends State<ProfilePage>
                             ),
                             Container(
                               padding: const EdgeInsets.only(
-                                  left: marginSide,
-                                  right: marginSide,
-                                  bottom: marginSideHalf),
+                                left: marginSide,
+                                right: marginSide,
+                              ),
                               child: const TextTitle(
                                 textAlign: TextAlign.center,
                                 text:
-                                    "3rd Semester General-Medicine Comenius University, Bratislava",
+                                    "3rd Semester General-Medicine \nComenius University, Bratislava",
+                                fontFamily: FontType.Text,
                                 fontSize: 17,
                                 color: CustomColors.color393333,
                                 fontWeight: FontWeight.normal,
@@ -134,19 +144,21 @@ class _ProfilePageState extends State<ProfilePage>
                                 Column(
                                   children: [
                                     const TextTitle(
+                                      fontFamily: FontType.Text,
                                       text: "5.0",
                                       color: CustomColors.color222222,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 16,
+                                      fontSize: 17,
                                     ),
                                     Container(
                                       padding: const EdgeInsets.only(
                                           top: marginSideHalf),
                                       child: const TextTitle(
                                         text: "Rating",
-                                        fontSize: 12,
+                                        fontFamily: FontType.Text,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.normal,
-                                        color: CustomColors.color717177,
+                                        color: CustomColors.color717171,
                                       ),
                                     ),
                                   ],
@@ -167,14 +179,16 @@ class _ProfilePageState extends State<ProfilePage>
                                       text: "43",
                                       color: CustomColors.color222222,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 16,
+                                      fontFamily: FontType.Text,
+                                      fontSize: 17,
                                     ),
                                     Container(
                                       padding: const EdgeInsets.only(
                                           top: marginSideHalf),
                                       child: const TextTitle(
                                         text: "Follower",
-                                        fontSize: 12,
+                                        fontFamily: FontType.Text,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.normal,
                                         color: CustomColors.color717177,
                                       ),
@@ -197,14 +211,16 @@ class _ProfilePageState extends State<ProfilePage>
                                       text: "Doctor",
                                       color: CustomColors.color222222,
                                       fontWeight: FontWeight.normal,
-                                      fontSize: 16,
+                                      fontFamily: FontType.Text,
+                                      fontSize: 17,
                                     ),
                                     Container(
                                       padding: const EdgeInsets.only(
                                           top: marginSideHalf),
                                       child: const TextTitle(
                                         text: "Status",
-                                        fontSize: 12,
+                                        fontFamily: FontType.Text,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.normal,
                                         color: CustomColors.color717177,
                                       ),
@@ -227,6 +243,8 @@ class _ProfilePageState extends State<ProfilePage>
                                         right: marginSideHalf,
                                         bottom: marginSideHalf),
                                     text: "Follow",
+                                    fontSize: 15,
+                                    fontFamily: FontType.Text,
                                   ),
                                 ),
                                 Expanded(
@@ -238,7 +256,9 @@ class _ProfilePageState extends State<ProfilePage>
                                         bottom: marginSideHalf),
                                     onPressed: () {},
                                     text: "Get in touch",
+                                    fontFamily: FontType.Text,
                                     textColor: CustomColors.color222222,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ],
@@ -254,7 +274,7 @@ class _ProfilePageState extends State<ProfilePage>
                   expandedHeight: kToolbarHeight,
                   collapsedHeight: kToolbarHeight,
                   automaticallyImplyLeading: false,
-                  elevation: 1,
+                  elevation: 0,
                   pinned: true,
                   flexibleSpace: Container(
                     alignment: AlignmentDirectional.center,

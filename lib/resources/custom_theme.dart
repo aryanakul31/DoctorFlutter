@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 import 'colors.dart';
 
 class CustomTheme {
   final ThemeData _themeData = ThemeData(
     textSelectionTheme:
         const TextSelectionThemeData(cursorColor: CustomColors.appColor),
-    fontFamily: "SfPro",
+    fontFamily: "SfProDisplay",
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.white,
@@ -27,4 +26,15 @@ class CustomTheme {
   getTheme() {
     return _themeData;
   }
+}
+
+enum FontType {
+  Text("SfProText"),
+  Display("SfProDisplay");
+
+  final String value;
+
+  const FontType(
+    this.value,
+  );
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/request/temp_data.dart';
 import '../../../resources/colors.dart';
+import '../../../resources/custom_theme.dart';
 import '../../../ui/text_title.dart';
 import '../../../utils/constants.dart';
 import '../../dashboard/widgets/subject_widget.dart';
@@ -28,7 +29,8 @@ class _ProfileTabState extends State<ProfileTab> {
                 margin: const EdgeInsets.symmetric(horizontal: marginSide),
                 child: const TextTitle(
                   text: "Areas of expertise",
-                  fontSize: 20,
+                  fontFamily: FontType.Display,
+                  fontSize: 22,
                   color: CustomColors.color222222,
                   fontWeight: FontWeight.w600,
                 ),
@@ -37,6 +39,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 padding: const EdgeInsets.symmetric(horizontal: marginSide),
                 child: const TextTitle(
                   text: "See All",
+                  fontFamily: FontType.Text,
                   fontSize: 15,
                   color: CustomColors.appColor,
                   fontWeight: FontWeight.normal,
@@ -45,7 +48,10 @@ class _ProfileTabState extends State<ProfileTab> {
             ],
           ),
           SizedBox(
-            height: 180,
+            height: marginSide,
+          ),
+          SizedBox(
+            height: 210,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: TempData.subjectList.length,
@@ -56,57 +62,75 @@ class _ProfileTabState extends State<ProfileTab> {
               },
             ),
           ),
+          SizedBox(
+            height: marginSide,
+          ),
           Container(
             height: 1,
             width: double.maxFinite,
             margin: EdgeInsets.all(marginSide),
             color: CustomColors.colorDDDDDD,
+          ),
+          SizedBox(
+            height: marginSide,
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "More about me",
-              fontSize: 20,
+              fontFamily: FontType.Display,
+              fontSize: 22,
               color: CustomColors.color222222,
               fontWeight: FontWeight.w600,
             ),
           ),
+          SizedBox(
+            height: marginSide,
+          ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
-            padding: EdgeInsets.symmetric(vertical: marginSideHalf),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text:
                   "I am the head surgeon at Harvard’s University hospital for cardiac surgery. In 2021, I won the nobel price for extraordinary scientific work in the field of cardiac catheters.",
               fontSize: 17,
+              fontFamily: FontType.Text,
               color: CustomColors.color222222,
               fontWeight: FontWeight.normal,
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
-            padding: EdgeInsets.symmetric(vertical: marginSideHalf),
+            padding: EdgeInsets.only(top: marginSide,bottom: marginSideHalf),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "Read more...",
+              fontFamily: FontType.Text,
               fontSize: 17,
               color: CustomColors.appColor,
               fontWeight: FontWeight.normal,
             ),
+          ),
+          SizedBox(
+            height: marginSide,
           ),
           Container(
             height: 1,
             width: double.maxFinite,
             margin: EdgeInsets.all(marginSide),
             color: CustomColors.colorDDDDDD,
+          ),
+          SizedBox(
+            height: marginSide,
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "Experience that stands out",
-              fontSize: 20,
+              fontFamily: FontType.Display,
+              fontSize: 22,
               color: CustomColors.color222222,
               fontWeight: FontWeight.w600,
             ),
@@ -117,7 +141,8 @@ class _ProfileTabState extends State<ProfileTab> {
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text:
-                  "I can help students in the field of cardiology due to my 20-year experience as a doctor.",
+                  "I can help students in the field of \ncardiology due to my 20-year experience \nas a doctor.",
+              fontFamily: FontType.Text,
               fontSize: 17,
               color: CustomColors.color222222,
               fontWeight: FontWeight.normal,
@@ -129,12 +154,16 @@ class _ProfileTabState extends State<ProfileTab> {
             margin: EdgeInsets.all(marginSide),
             color: CustomColors.colorDDDDDD,
           ),
+          SizedBox(
+            height: marginSide,
+          ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "Languages",
-              fontSize: 20,
+              fontFamily: FontType.Display,
+              fontSize: 22,
               color: CustomColors.color222222,
               fontWeight: FontWeight.w600,
             ),
@@ -145,6 +174,7 @@ class _ProfileTabState extends State<ProfileTab> {
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "English, German",
+              fontFamily: FontType.Text,
               fontSize: 17,
               color: CustomColors.color222222,
               fontWeight: FontWeight.normal,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../resources/colors.dart';
+import '../../../resources/custom_theme.dart';
 import '../../../ui/text_title.dart';
 import '../../../utils/constants.dart';
 
@@ -38,6 +39,7 @@ class _ReviewsTabState extends State<ReviewsTab> {
                   alignment: AlignmentDirectional.center,
                   child: const TextTitle(
                     text: "5.0",
+                    fontFamily: FontType.Text,
                     fontSize: 38,
                     color: CustomColors.colorF2CC02,
                     fontWeight: FontWeight.normal,
@@ -46,19 +48,21 @@ class _ReviewsTabState extends State<ReviewsTab> {
               ],
             ),
           ),
+          SizedBox(height: marginSide*1.5,),
           Container(
             margin: const EdgeInsets.symmetric(
                 horizontal: marginSide, vertical: marginSide),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "What others have experienced",
-              fontSize: 20,
+              fontFamily: FontType.Display,
+              fontSize: 22,
               color: CustomColors.color222222,
               fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(
-            height: 210,
+            height: 245,
             child: PageView.builder(
               itemCount: 3,
               itemBuilder: (context, position) {
@@ -67,8 +71,12 @@ class _ReviewsTabState extends State<ReviewsTab> {
             ),
           ),
           ButtonOutlined(
+            extraPadding: true,
             onPressed: () {},
             text: "Read all 399 Reviews",
+            fontFamily: FontType.Text,
+            fontWeight: FontWeight.w600,
+            fontSize: 17,
           ),
         ],
       ),

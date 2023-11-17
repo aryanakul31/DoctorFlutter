@@ -1,6 +1,16 @@
 import '../response/SubjectResponseModel.dart';
 
 class TempData {
+  static var doctorCategoryList = [
+    "All",
+    "Anesthesiology",
+    "Biochemistry",
+    "Biochemistry",
+    "Biochemistry",
+    "Biochemistry",
+    "Biochemistry",
+  ];
+
   static var subjectList = [
     SubjectResponseModel(
         name: "Chirurgie",

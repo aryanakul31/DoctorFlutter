@@ -1,10 +1,11 @@
 import 'package:doctors/models/request/temp_data.dart';
-import '../../../resources/colors.dart';
+import 'package:doctors/resources/custom_theme.dart';
 import 'package:doctors/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
+import '../../../resources/colors.dart';
 import '../../ui/button_filled.dart';
 import '../../ui/text_title.dart';
 import 'widgets/class_page_view.dart';
@@ -33,26 +34,15 @@ class _DashBoardPageState extends State<DashBoardPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            spaceInBetween,
+            const SizedBox(height: 10.0),
             AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
               automaticallyImplyLeading: false,
-              title: const Row(
+              title: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  TextTitle(
-                    text: "mentored.",
-                    isShadow: true,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  TextTitle(
-                    text: "app",
-                    isShadow: true,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  SvgPicture.asset("assets/images/dashboard_logo.svg")
                 ],
               ),
               actions: [
@@ -60,36 +50,36 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     padding: const EdgeInsets.only(right: marginSideHalf),
                     height: 40,
                     alignment: AlignmentDirectional.center,
-                    child: Container(
-                        alignment: Alignment.center,
-                        child: SvgPicture.asset(
-                            "assets/images/dashboard_search.svg"))),
+                    child:
+                        SvgPicture.asset("assets/images/dashboard_search.svg")),
                 Container(
-                  alignment: AlignmentDirectional.center,
-                  height: 40,
-                  padding: const EdgeInsets.only(right: marginSide),
-                  child: SvgPicture.asset(
-                      "assets/images/dashboard_notification.svg"),
-                ),
+                    padding:
+                        const EdgeInsets.only(right: marginSide, bottom: 8),
+                    height: 40,
+                    alignment: AlignmentDirectional.center,
+                    child: SvgPicture.asset(
+                        "assets/images/dashboard_notification.svg")),
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(top: marginSide),
+              margin: const EdgeInsets.only(top: 30),
               padding: const EdgeInsets.symmetric(horizontal: marginSide),
               child: const TextTitle(
-                text: "Hello Andreas👋",
-                isShadow: true,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                text: "Hello Andreas 👋",
+                isShadow: false,
+                fontFamily: FontType.Display,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: marginSide, vertical: marginSideHalf),
+              padding: EdgeInsets.only(
+                  left: marginSide, right: marginSide, bottom: 25),
               child: TextTitle(
-                isShadow: true,
+                isShadow: false,
                 text: "you have 3 upcoming classes",
-                fontSize: 14,
+                fontFamily: FontType.Display,
+                fontSize: 18,
                 fontWeight: FontWeight.w300,
               ),
             ),
@@ -108,12 +98,15 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 },
               ),
             ),
-            PageViewDotIndicator(
-              currentItem: _currentSelect,
-              count: 3,
-              unselectedColor: CustomColors.colorE6E6E6,
-              selectedColor: CustomColors.color858585,
-              size: const Size(5, 5),
+            Container(
+              margin: const EdgeInsets.only(top: marginSideHalf),
+              child: PageViewDotIndicator(
+                currentItem: _currentSelect,
+                count: 3,
+                unselectedColor: CustomColors.colorE6E6E6,
+                selectedColor: CustomColors.color858585,
+                size: const Size(5, 5),
+              ),
             ),
             if (isLoading)
               Container(
@@ -128,19 +121,27 @@ class _DashBoardPageState extends State<DashBoardPage> {
             else
               ButtonFilled(
                 onPressed: () {},
+                extraPadding: true,
+                margin: const EdgeInsets.only(
+                  left: marginSide,
+                  right: marginSide,
+                  bottom: marginSide,
+                  top: (3 * marginSide),
+                ),
                 text: 'View Classes',
                 imageAssetPost: "assets/images/arrow_next.svg",
               ),
             Container(
-              height: 1,
+              height: 0.8,
               margin: const EdgeInsets.only(
                   bottom: marginSideDouble,
                   left: marginSide,
                   right: marginSide,
-                  top: marginSide),
+                  top: 2 * marginSide),
               width: double.infinity,
               color: CustomColors.colorDDDDDD,
             ),
+            const SizedBox(height: marginSide),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -148,8 +149,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: marginSide),
                   child: const TextTitle(
-                    text: "Popular Subjects",
-                    fontSize: 20,
+                    text: "Popular subjects",
+                    fontFamily: FontType.Display,
+                    fontSize: 22,
                     color: CustomColors.color222222,
                     fontWeight: FontWeight.w600,
                   ),
@@ -157,6 +159,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: marginSide),
                   child: const TextTitle(
+                    fontFamily: FontType.Text,
                     text: "See All",
                     fontSize: 15,
                     color: CustomColors.appColor,
@@ -165,18 +168,31 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: marginSide,
+            ),
             SizedBox(
-              height: 180,
-              child: ListView.builder(
+              height: 210,
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                itemCount: TempData.subjectList.length,
-                itemBuilder: (context, index) {
-                  return SubjectWidget(
-                    subject: TempData.subjectList[index],
-                  );
-                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                      left: marginSide / 2, right: marginSide / 2),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: TempData.subjectList.length,
+                    itemBuilder: (context, index) {
+                      return SubjectWidget(
+                        subject: TempData.subjectList[index],
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
+            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -185,7 +201,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   margin: const EdgeInsets.symmetric(horizontal: marginSide),
                   child: const TextTitle(
                     text: "What’s new on mentored?",
-                    fontSize: 20,
+                    fontFamily: FontType.Display,
+                    fontSize: 22,
                     color: CustomColors.color222222,
                     fontWeight: FontWeight.w600,
                   ),
@@ -194,14 +211,26 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             SizedBox(
               height: 200,
-              child: ListView.builder(
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                itemCount: TempData.mentorList.length,
-                itemBuilder: (context, index) {
-                  return MentoredWidget(data: TempData.mentorList[index]);
-                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    left: marginSide / 2,
+                    right: marginSide / 2,
+                  ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: TempData.mentorList.length,
+                    itemBuilder: (context, index) {
+                      return MentoredWidget(data: TempData.mentorList[index]);
+                    },
+                  ),
+                ),
               ),
             ),
+            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,8 +238,9 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: marginSide),
                   child: const TextTitle(
+                    fontFamily: FontType.Display,
                     text: "Featured doctors",
-                    fontSize: 20,
+                    fontSize: 22,
                     color: CustomColors.color222222,
                     fontWeight: FontWeight.w600,
                   ),
@@ -219,6 +249,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   padding: const EdgeInsets.symmetric(horizontal: marginSide),
                   child: const TextTitle(
                     text: "See All",
+                    fontFamily: FontType.Text,
                     fontSize: 15,
                     color: CustomColors.appColor,
                     fontWeight: FontWeight.normal,
@@ -226,18 +257,31 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ],
             ),
+            const SizedBox(height: marginSide),
             SizedBox(
-              height: 235,
-              child: ListView.builder(
+              height: 255,
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const DoctorWidget();
-                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    left: marginSide / 2,
+                    right: marginSide / 2,
+                  ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const DoctorWidget();
+                    },
+                  ),
+                ),
               ),
             ),
+            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide),
             Container(
-              margin: const EdgeInsets.only(top: marginSideHalf),
+              margin: const EdgeInsets.only(top: 1.5 * marginSide),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -246,7 +290,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     margin: const EdgeInsets.symmetric(horizontal: marginSide),
                     child: const TextTitle(
                       text: "Best rated doctors",
-                      fontSize: 20,
+                      fontFamily: FontType.Display,
+                      fontSize: 22,
                       color: CustomColors.color222222,
                       fontWeight: FontWeight.w600,
                     ),
@@ -255,6 +300,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     padding: const EdgeInsets.symmetric(horizontal: marginSide),
                     child: const TextTitle(
                       text: "See All",
+                      fontFamily: FontType.Text,
                       fontSize: 15,
                       color: CustomColors.appColor,
                       fontWeight: FontWeight.normal,
@@ -263,13 +309,14 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ],
               ),
             ),
+            const SizedBox(height: marginSideHalf),
             Container(
               margin: const EdgeInsets.only(top: marginSideHalf),
               child: SizedBox(
                 height: 30,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 10,
+                  itemCount: TempData.doctorCategoryList.length,
                   itemBuilder: (context, index) {
                     Color getColorBg() {
                       if (index == 0) {
@@ -296,7 +343,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
                               horizontal: marginSide, vertical: marginSideHalf),
                           color: getColorBg(),
                           child: TextTitle(
-                            text: "All",
+                            fontFamily: FontType.Text,
+                            text: TempData.doctorCategoryList[index],
                             fontSize: 15,
                             color: getColorText(),
                             fontWeight: FontWeight.normal,
@@ -308,14 +356,25 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ),
             ),
+            const SizedBox(height: marginSide),
             SizedBox(
-              height: 235,
-              child: ListView.builder(
+              height: 255,
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const DoctorWidget();
-                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    left: marginSide / 2,
+                    right: marginSide / 2,
+                  ),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return const DoctorWidget();
+                    },
+                  ),
+                ),
               ),
             ),
           ],
