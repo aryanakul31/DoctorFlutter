@@ -34,7 +34,6 @@ class _DashBoardPageState extends State<DashBoardPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10.0),
             AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
@@ -62,7 +61,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(top: 30),
+              margin: const EdgeInsets.only(top: 35),
               padding: const EdgeInsets.symmetric(horizontal: marginSide),
               child: const TextTitle(
                 text: "Hello Andreas 👋",
@@ -74,7 +73,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             const Padding(
               padding: EdgeInsets.only(
-                  left: marginSide, right: marginSide, bottom: 25),
+                  left: marginSide, right: marginSide, bottom: 15, top: 2),
               child: TextTitle(
                 isShadow: false,
                 text: "you have 3 upcoming classes",
@@ -84,7 +83,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ),
             SizedBox(
-              height: 215,
+              height: 221,
               width: double.infinity,
               child: PageView.builder(
                 onPageChanged: (index) {
@@ -111,9 +110,11 @@ class _DashBoardPageState extends State<DashBoardPage> {
             if (isLoading)
               Container(
                   alignment: AlignmentDirectional.center,
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: marginSide,
-                    vertical: marginSide,
+                  margin: const EdgeInsets.only(
+                    left: marginSide,
+                    right: marginSide,
+                    bottom: marginSide,
+                    top: (3 * marginSide) - 5,
                   ),
                   child: const CircularProgressIndicator(
                     color: CustomColors.appColor,
@@ -126,7 +127,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   left: marginSide,
                   right: marginSide,
                   bottom: marginSide,
-                  top: (3 * marginSide),
+                  top: (3 * marginSide) - 5,
                 ),
                 text: 'View Classes',
                 imageAssetPost: "assets/images/arrow_next.svg",
@@ -169,7 +170,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ],
             ),
             const SizedBox(
-              height: marginSide,
+              height: marginSide - 5,
             ),
             SizedBox(
               height: 210,
@@ -259,7 +260,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             const SizedBox(height: marginSide),
             SizedBox(
-              height: 245,
+              height: 270,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(
@@ -358,7 +359,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             const SizedBox(height: marginSide),
             SizedBox(
-              height: 245,
+              height: 270,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(

@@ -21,15 +21,14 @@ class _DoctorWidgetState extends State<DoctorWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: navigateToProfile,
+    return Container(
+      margin: const EdgeInsets.only(
+        left: marginSide / 2 - 4,
+        right: marginSide / 2 - 4,
+        top: marginSide,
+        bottom: marginSide,
+      ),
       child: Card(
-        margin: const EdgeInsets.only(
-          top: marginSideHalf,
-          bottom: marginSideHalf,
-          left: marginSide / 2 - 4,
-          right: marginSide / 2 - 4,
-        ),
         elevation: 5,
         shadowColor: Colors.black.withOpacity(0.1),
         shape: RoundedRectangleBorder(
@@ -42,13 +41,15 @@ class _DoctorWidgetState extends State<DoctorWidget> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(cornerRadius16),
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: marginSideHalf),
+            padding: EdgeInsets.symmetric(vertical: marginSideHalf),
+            color: Colors.white,
             alignment: AlignmentDirectional.center,
             child: Column(
               children: [
                 Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: marginSideHalf, bottom: marginSide),
+                  margin:
+                      EdgeInsets.only(top: marginSideHalf, bottom: marginSide),
                   child: Stack(
                     alignment: AlignmentDirectional.bottomEnd,
                     children: [

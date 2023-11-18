@@ -22,7 +22,8 @@ class ClassPageView extends StatelessWidget {
             style: BorderStyle.solid,
           ),
           borderRadius: BorderRadius.circular(cornerRadius16)),
-      child: Padding(
+      child: Container(
+        color: Colors.white,
         padding: const EdgeInsets.all(marginSide),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
