@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: CustomTheme().getTheme(),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.dashboardRoute.path,
+      initialRoute: MyRoutes.signUpRoute.path,
       routes: MyRoutes.getRoute(),
     );
   }

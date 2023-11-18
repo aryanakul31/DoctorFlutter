@@ -48,7 +48,7 @@ class _DoctorWidgetState extends State<DoctorWidget> {
               children: [
                 Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: marginSide, bottom: marginSide),
+                  margin: EdgeInsets.only(top: marginSideHalf, bottom: marginSide),
                   child: Stack(
                     alignment: AlignmentDirectional.bottomEnd,
                     children: [

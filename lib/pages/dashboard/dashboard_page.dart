@@ -259,7 +259,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             const SizedBox(height: marginSide),
             SizedBox(
-              height: 255,
+              height: 245,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(
@@ -279,7 +279,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ),
             const SizedBox(height: marginSide),
-            const SizedBox(height: marginSide),
+            // const SizedBox(height: marginSide),
             Container(
               margin: const EdgeInsets.only(top: 1.5 * marginSide),
               child: Row(
@@ -358,7 +358,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             ),
             const SizedBox(height: marginSide),
             SizedBox(
-              height: 255,
+              height: 245,
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Container(

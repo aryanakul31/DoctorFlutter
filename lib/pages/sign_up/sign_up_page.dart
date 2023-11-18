@@ -91,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Container(
                 alignment: AlignmentDirectional.centerEnd,
                 margin: const EdgeInsets.only(
-                    bottom: marginSide, top: marginSide, right: marginSide),
+                    bottom: marginSideHalf, top: 5, right: marginSide),
                 child: const Stack(
                   alignment: AlignmentDirectional.center,
                   children: [
@@ -124,7 +124,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                    left: marginSide, right: marginSide, top: marginSide),
+                    left: marginSide, right: marginSide, top: marginSideHalf),
                 child: const TextTitle(
                   text:
                       "Create an account so you can talk to experts from various medical fields.",
@@ -135,7 +135,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   textAlign: TextAlign.start,
                 ),
               ),
-              spaceInBetween,
+              SizedBox(height: 2*marginSide,),
               CustomTextField(
                 hint: 'Full Name',
                 label: 'Name',
@@ -189,18 +189,25 @@ class _SignUpPageState extends State<SignUpPage> {
                 margin: const EdgeInsets.only(
                     top: marginSide, left: marginSide, right: marginSide),
               ),
-              spaceInBetween,
               if (_isLoading)
                 Container(
                     margin: const EdgeInsets.symmetric(
                       horizontal: marginSide,
-                      vertical: marginSide,
+                      vertical: marginSide*2,
                     ),
                     alignment: AlignmentDirectional.center,
                     child: const CircularProgressIndicator())
               else
                 ButtonFilled(
+                  margin:  const EdgeInsets.symmetric(
+                    horizontal: marginSide,
+                    vertical: marginSide*2,
+                  ),
+                  extraPadding: true,
                   isValid: _isValid,
+                  fontFamily: FontType.Text,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
                   onPressed: () {
                     login(context);
                   },
@@ -228,6 +235,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
+              SizedBox(height: marginSide*2,),
               const SocialLoginWidget(
                 text: "Continue with Apple",
                 iconLeading: "assets/images/icon_apple.svg",
@@ -240,7 +248,6 @@ class _SignUpPageState extends State<SignUpPage> {
                 text: "Continue with Facebook",
                 iconLeading: "assets/images/icon_facebook.svg",
               ),
-              spaceInBetween,
             ],
           ),
         ),
