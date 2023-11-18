@@ -19,48 +19,46 @@ class SubjectWidget extends StatelessWidget {
 
     return InkWell(
       onTap: moveToProfile,
-      child: Container(
+      child: Card(
         margin: const EdgeInsets.only(
-          left: marginSide / 2-4,
-          right: marginSide / 2-4,
+          left: marginSide / 2,
+          right: marginSide / 2,
           top: marginSideHalf,
           bottom: marginSideHalf,
         ),
-        child: Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(marginSideHalf),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(marginSideHalf),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: 170,
-                  height: 130,
-                  child: Image.asset(
-                    subject.image,
-                    fit: BoxFit.cover,
-                  ),
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(marginSideHalf),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(marginSideHalf),
+          child: Column(
+            children: [
+              SizedBox(
+                width: 170,
+                height: 130,
+                child: Image.asset(
+                  subject.image,
+                  fit: BoxFit.cover,
                 ),
-                Expanded(
-                  child: Container(
-                    width: 170,
-                    color: HexColor.fromHex(subject.color),
-                    child: Padding(
-                      padding: const EdgeInsets.all(marginSideHalf),
-                      child: TextTitle(
-                        text: subject.name,
-                        fontFamily: FontType.Text,
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                      ),
+              ),
+              Expanded(
+                child: Container(
+                  width: 170,
+                  color: HexColor.fromHex(subject.color),
+                  child: Padding(
+                    padding: const EdgeInsets.all(marginSideHalf),
+                    child: TextTitle(
+                      text: subject.name,
+                      fontFamily: FontType.Text,
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),

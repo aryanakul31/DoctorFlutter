@@ -48,7 +48,9 @@ class _ReviewsTabState extends State<ReviewsTab> {
               ],
             ),
           ),
-          SizedBox(height: marginSide*1.5,),
+          SizedBox(
+            height: marginSide * 1.5,
+          ),
           Container(
             margin: const EdgeInsets.symmetric(
                 horizontal: marginSide, vertical: marginSide),
@@ -62,7 +64,7 @@ class _ReviewsTabState extends State<ReviewsTab> {
             ),
           ),
           SizedBox(
-            height: 245,
+            height: 260,
             child: PageView.builder(
               itemCount: 3,
               itemBuilder: (context, position) {

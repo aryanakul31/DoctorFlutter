@@ -16,12 +16,13 @@ class ClassPageView extends StatelessWidget {
       shadowColor: Colors.black.withOpacity(0.1),
       margin: const EdgeInsets.all(marginSide),
       shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: CustomColors.colorEFEFEF.withOpacity(0.5),
-            width: 2,
-            style: BorderStyle.solid,
-          ),
-          borderRadius: BorderRadius.circular(cornerRadius16)),
+        side: BorderSide(
+          color: CustomColors.colorEFEFEF.withOpacity(0.5),
+          width: 2,
+          style: BorderStyle.solid,
+        ),
+        borderRadius: BorderRadius.circular(cornerRadius16),
+      ),
       child: Container(
         color: Colors.white,
         padding: const EdgeInsets.all(marginSide),

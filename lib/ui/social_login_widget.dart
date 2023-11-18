@@ -15,41 +15,38 @@ class SocialLoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Card(
       margin: const EdgeInsets.only(
           left: marginSide,
           right: marginSide,
           top: marginSideHalf,
           bottom: marginSideHalf),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(marginSideHalf),
-        child: Material(
-          child: InkWell(
-            onTap: () {},
-            child: ListTile(
-              minLeadingWidth: 10,
-              title: TextTitle(
-                text: text,
-                fontFamily: FontType.Text,
-                fontSize: 17,
-                color: CustomColors.color222222,
-                fontWeight: FontWeight.normal,
-              ),
-              trailing: SizedBox(
-                width: 15,
-                height: 15,
-                child: SvgPicture.asset(
-                  "assets/images/arrow_next.svg",
-                  color: Colors.black,
-                ),
-              ),
-              leading: SizedBox(
-                width: 20,
-                height: 20,
-                child: SvgPicture.asset(iconLeading),
-              ),
-            ),
+      color: CustomColors.colorF5F5F5,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: ListTile(
+        minLeadingWidth: 15,
+        title: TextTitle(
+          text: text,
+          fontFamily: FontType.Text,
+          fontSize: 17,
+          color: CustomColors.color222222,
+          fontWeight: FontWeight.normal,
+        ),
+        trailing: SizedBox(
+          width: 15,
+          height: 15,
+          child: SvgPicture.asset(
+            "assets/images/arrow_next.svg",
+            color: Colors.black,
           ),
+        ),
+        leading: SizedBox(
+          width: 20,
+          height: 20,
+          child: SvgPicture.asset(iconLeading),
         ),
       ),
     );

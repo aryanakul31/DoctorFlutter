@@ -35,6 +35,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBar(
+              scrolledUnderElevation: 0,
               backgroundColor: Colors.transparent,
               elevation: 0,
               automaticallyImplyLeading: false,
@@ -230,7 +231,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ),
             ),
-            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide / 2),
             const SizedBox(height: marginSide),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -258,7 +259,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ],
             ),
-            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide / 2),
             SizedBox(
               height: 270,
               child: SingleChildScrollView(
@@ -280,9 +281,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
               ),
             ),
             const SizedBox(height: marginSide),
-            // const SizedBox(height: marginSide),
             Container(
-              margin: const EdgeInsets.only(top: 1.5 * marginSide),
+              margin: const EdgeInsets.only(top: marginSide - 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -314,7 +314,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
             Container(
               margin: const EdgeInsets.only(top: marginSideHalf),
               child: SizedBox(
-                height: 30,
+                height: 35,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: TempData.doctorCategoryList.length,
@@ -338,7 +338,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     return Container(
                       margin: const EdgeInsets.only(left: marginSide),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(marginSide),
+                        borderRadius: BorderRadius.circular(25),
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: marginSide, vertical: marginSideHalf),
@@ -357,7 +357,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                 ),
               ),
             ),
-            const SizedBox(height: marginSide),
+            const SizedBox(height: marginSide / 2 - 2),
             SizedBox(
               height: 270,
               child: SingleChildScrollView(

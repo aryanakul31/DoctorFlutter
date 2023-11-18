@@ -62,6 +62,9 @@ class ButtonOutlined extends StatelessWidget {
       width: double.infinity,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
           side: BorderSide(width: 1.0, color: getButtonColor()),
         ),
         onPressed: onPressed,

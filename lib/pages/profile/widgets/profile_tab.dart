@@ -52,14 +52,22 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
           SizedBox(
             height: 210,
-            child: ListView.builder(
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              itemCount: TempData.subjectList.length,
-              itemBuilder: (context, index) {
-                return SubjectWidget(
-                  subject: TempData.subjectList[index],
-                );
-              },
+              child: Container(
+                margin: const EdgeInsets.only(
+                    left: marginSide / 2, right: marginSide / 2),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: TempData.subjectList.length,
+                  itemBuilder: (context, index) {
+                    return SubjectWidget(
+                      subject: TempData.subjectList[index],
+                    );
+                  },
+                ),
+              ),
             ),
           ),
           SizedBox(
@@ -102,7 +110,7 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: marginSide),
-            padding: EdgeInsets.only(top: marginSide,bottom: marginSideHalf),
+            padding: EdgeInsets.only(top: marginSide, bottom: marginSideHalf),
             alignment: AlignmentDirectional.centerStart,
             child: const TextTitle(
               text: "Read more...",

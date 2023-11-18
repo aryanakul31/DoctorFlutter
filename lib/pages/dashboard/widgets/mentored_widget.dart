@@ -13,42 +13,40 @@ class MentoredWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: Container(
+      child: Card(
         margin: const EdgeInsets.only(
-          left: marginSide / 2 - 4,
-          right: marginSide / 2 - 4,
+          left: marginSide / 2,
+          right: marginSide / 2,
           top: marginSide,
           bottom: marginSide,
         ),
-        child: Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(marginSideHalf),
-          ),
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(marginSideHalf),
-                child: Image.asset(
-                  data.image,
-                  width: 300,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Container(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(marginSideHalf),
+        ),
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(marginSideHalf),
+              child: Image.asset(
+                data.image,
                 width: 300,
-                height: 200,
-                padding: const EdgeInsets.all(marginSide),
-                child: TextTitle(
-                  fontFamily: FontType.Display,
-                  text: data.name,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                ),
+                fit: BoxFit.cover,
               ),
-            ],
-          ),
+            ),
+            Container(
+              width: 300,
+              height: 200,
+              padding: const EdgeInsets.all(marginSide),
+              child: TextTitle(
+                fontFamily: FontType.Display,
+                text: data.name,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );

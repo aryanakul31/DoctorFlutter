@@ -135,7 +135,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   textAlign: TextAlign.start,
                 ),
               ),
-              SizedBox(height: 2*marginSide,),
+              SizedBox(
+                height: 2 * marginSide,
+              ),
               CustomTextField(
                 hint: 'Full Name',
                 label: 'Name',
@@ -146,7 +148,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   validation();
                 },
                 margin: const EdgeInsets.only(
-                    top: marginSide, left: marginSide, right: marginSide),
+                    top: marginSide / 2 - 5,
+                    left: marginSide,
+                    right: marginSide),
               ),
               CustomTextField(
                 hint: 'max@mustermann.com',
@@ -193,15 +197,15 @@ class _SignUpPageState extends State<SignUpPage> {
                 Container(
                     margin: const EdgeInsets.symmetric(
                       horizontal: marginSide,
-                      vertical: marginSide*2,
+                      vertical: marginSide * 2 - 10,
                     ),
                     alignment: AlignmentDirectional.center,
                     child: const CircularProgressIndicator())
               else
                 ButtonFilled(
-                  margin:  const EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                     horizontal: marginSide,
-                    vertical: marginSide*2,
+                    vertical: marginSide * 2 - 10,
                   ),
                   extraPadding: true,
                   isValid: _isValid,
@@ -219,12 +223,14 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     height: 0.5,
                     margin: const EdgeInsets.symmetric(
-                        horizontal: marginSide, vertical: marginSide),
+                        horizontal: marginSide, vertical: marginSide + 10),
                     color: CustomColors.color747474,
                   ),
                   Container(
                     color: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: marginSide),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: marginSide / 2,
+                    ),
                     child: const TextTitle(
                       text: "Or",
                       fontFamily: FontType.Text,
@@ -235,7 +241,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              SizedBox(height: marginSide*2,),
+              SizedBox(
+                height: marginSide,
+              ),
               const SocialLoginWidget(
                 text: "Continue with Apple",
                 iconLeading: "assets/images/icon_apple.svg",

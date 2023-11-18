@@ -38,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       elevation: 0,
       margin: widget.margin,
       shape: RoundedRectangleBorder(
-        side: const BorderSide(color: CustomColors.color717177, width: 1.0),
+        side: const BorderSide(color: CustomColors.colorB0B0B0, width: 1.0),
         borderRadius: BorderRadius.circular(marginSideHalf),
       ),
       child: Container(

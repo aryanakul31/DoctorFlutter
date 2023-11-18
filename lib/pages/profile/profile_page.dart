@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage>
       backgroundColor: CustomColors.backgroundColor,
       bottomNavigationBar: Container(
         color: Colors.white,
-        height: 90,
+        height: 100,
         child: Column(children: [
           Container(
             height: 1,
@@ -111,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage>
                               margin: const EdgeInsets.only(
                                 left: marginSide,
                                 right: marginSide,
-                                top: marginSideHalf/2,
+                                top: marginSideHalf / 2,
                                 bottom: marginSideHalf,
                               ),
                               child: const TextTitle(
@@ -275,6 +275,7 @@ class _ProfilePageState extends State<ProfilePage>
                   collapsedHeight: kToolbarHeight,
                   automaticallyImplyLeading: false,
                   elevation: 0,
+                  scrolledUnderElevation: 0,
                   pinned: true,
                   flexibleSpace: Container(
                     alignment: AlignmentDirectional.center,

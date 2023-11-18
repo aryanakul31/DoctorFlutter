@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class CustomColors {
   static const appColor = Color(0xFFF8A002);
   static const color222222 = Color(0xFF222222);
@@ -15,7 +17,7 @@ class CustomColors {
   static const colorEDEDED = Color(0XFFEDEDED);
   static const colorB0B0B0 = Color(0XFFB0B0B0);
 
-  static const backgroundColor = Color(0XFFFFFFFF);
+  static const backgroundColor = Colors.white;
 
   static const colorF2CC02 = Color(0XFFF2CC02);
 
@@ -26,4 +28,6 @@ class CustomColors {
   static const color848484 = Color(0XFF848484);
 
   static const colorEFEFEF = Color(0XFFEFEFEF);
+
+  static const colorF5F5F5 = Color(0XFFF5F5F5);
 }

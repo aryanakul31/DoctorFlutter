@@ -21,14 +21,15 @@ class _DoctorWidgetState extends State<DoctorWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(
-        left: marginSide / 2 - 4,
-        right: marginSide / 2 - 4,
-        top: marginSide,
-        bottom: marginSide,
-      ),
+    return InkWell(
+      onTap: navigateToProfile,
       child: Card(
+        margin: const EdgeInsets.only(
+          left: marginSide / 2 - 4,
+          right: marginSide / 2 - 4,
+          top: marginSide - 5,
+          bottom: marginSide,
+        ),
         elevation: 5,
         shadowColor: Colors.black.withOpacity(0.1),
         shape: RoundedRectangleBorder(
